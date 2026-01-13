@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌤️ Weather Dashboard | Real-time Weather & More</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>
+                <i class="fas fa-cloud-sun"></i>
+                <span>Weather Dashboard</span>
+            </h1>
+            <p>Get real-time weather updates, location maps, breaking news, and currency exchange rates for any city worldwide</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="🌍 Enter city name (e.g., Almaty, London, Tokyo)">
+                <button id="searchBtn">
+                    <i class="fas fa-search"></i>
+                    <span>Search Weather</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Weather Information -->
+            <div class="weather-section">
+                <h2><i class="fas fa-temperature-high"></i> Current Weather</h2>
+                <div id="weatherInfo" class="weather-card">
+                    <div class="weather-main">
+                        <div id="weatherIcon">
+                            <i class="fas fa-cloud-sun" style="font-size: 80px; color: white;"></i>
+                        </div>
+                        <div class="temp-info">
+                            <h3 id="cityName">Search a city</h3>
+                            <div class="temperature">
+                                <span id="temperature">-</span>
+                                <span class="unit">°C</span>
+                            </div>
+                            <p id="weatherDescription">Enter a city to see weather</p>
+                        </div>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-temperature-low"></i>
+                            <span>Feels like<br><strong id="feelsLike">-</strong>°C</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <span>Humidity<br><strong id="humidity">-</strong>%</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind Speed<br><strong id="windSpeed">-</strong> m/s</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-compress-alt"></i>
+                            <span>Pressure<br><strong id="pressure">-</strong> hPa</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>Rain (3h)<br><strong id="rain">-</strong> mm</span>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-globe-americas"></i>
+                            <span>Country<br><strong id="country">-</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2><i class="fas fa-map-marked-alt"></i> Location Map</h2>
+                <div id="map">
+                    <div class="simple-map-container">
+                        <div class="map-header">
+                            <i class="fas fa-map-pin"></i>
+                            <h3>City Location</h3>
+                        </div>
+                        <div class="coordinates">
+                            <div class="coord">
+                                <span class="label">Latitude</span>
+                                <span class="value" id="mapLat">-</span>
+                            </div>
+                            <div class="coord">
+                                <span class="label">Longitude</span>
+                                <span class="value" id="mapLon">-</span>
+                            </div>
+                        </div>
+                        <div class="static-map">
+                            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                                 alt="World Map"
+                                 id="mapImage">
+                        </div>
+                        <div class="map-links">
+                            <a href="#" target="_blank" class="map-link" id="openstreetmapLink">
+                                <i class="fas fa-external-link-alt"></i> OpenStreetMap
+                            </a>
+                            <a href="#" target="_blank" class="map-link" id="googlemapsLink">
+                                <i class="fas fa-map-marked-alt"></i> Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="additional-info">
+                <!-- News Section -->
+                <div class="news-section">
+                    <h2><i class="fas fa-newspaper"></i> Top News</h2>
+                    <div id="newsContainer" class="news-container">
+                        <div class="news-item">
+                            <h4>Welcome to Weather Dashboard</h4>
+                            <p>Search for any city to get real-time weather updates, location information, and relevant news.</p>
+                            <div class="news-footer">
+                                <span class="news-source"><i class="fas fa-newspaper"></i> Weather Dashboard</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <h4>Real-time Weather Data</h4>
+                            <p>Powered by OpenWeather API with accurate temperature, humidity, wind speed, and more.</p>
+                            <div class="news-footer">
+                                <span class="news-source"><i class="fas fa-newspaper"></i> Weather Dashboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Currency Section -->
+                <div class="currency-section">
+                    <h2><i class="fas fa-money-bill-wave"></i> Currency Exchange</h2>
+                    <div id="currencyInfo" class="currency-card">
+                        <div class="currency-header">
+                            <h3><i class="fas fa-chart-line"></i> Exchange Rates</h3>
+                            <div class="base-currency">
+                                <span class="base-flag">💵</span>
+                                <strong>USD</strong>
+                            </div>
+                        </div>
+                        <p class="update-time">
+                            <i class="far fa-clock"></i> 
+                            Loading rates...
+                        </p>
+                        <div class="currency-rates">
+                            <div class="rate-item">
+                                <div class="currency-info">
+                                    <span class="currency-flag">🇪🇺</span>
+                                    <span class="currency-name">Euro</span>
+                                </div>
+                                <div class="currency-rate">
+                                    <strong>0.92 EUR</strong>
+                                </div>
+                            </div>
+                            <div class="rate-item">
+                                <div class="currency-info">
+                                    <span class="currency-flag">🇬🇧</span>
+                                    <span class="currency-name">British Pound</span>
+                                </div>
+                                <div class="currency-rate">
+                                    <strong>0.79 GBP</strong>
+                                </div>
+                            </div>
+                            <div class="rate-item">
+                                <div class="currency-info">
+                                    <span class="currency-flag">🇰🇿</span>
+                                    <span class="currency-name">Kazakh Tenge</span>
+                                </div>
+                                <div class="currency-rate">
+                                    <strong>468.3 KZT</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="currency-footer">
+                            <small>Search a city to see local currency</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
