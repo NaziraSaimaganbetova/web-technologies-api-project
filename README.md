@@ -1,4 +1,3 @@
-# web-technologies-api-project
 # Web Technologies – API Project
 
 ## Course
@@ -8,15 +7,22 @@ Web Technologies
 REST API
 
 ## Description
-This repository contains an API project developed as part of the Web Technologies course.
-The implementation and source code will be uploaded in stages.
+This project is a completed API-based web application developed as part of the Web Technologies course.
 
-## Technologies (planned)
+## Features
+- API data fetching
+- Dynamic content rendering
+- Responsive UI
+
+## Technologies Used
 - HTML
 - CSS
 - JavaScript
 - REST API
 - JSON
 
+## How to Run
+Open `index.html` in a web browser.
+
 ## Status
-In progress
+Completed
